@@ -16,6 +16,9 @@ class ImageHandler():
         if len(self.images.shape) == 4 and self.images.shape[3] == 1: # grayscale can simply return as is without 3rd dim.
             return np.squeeze(self.images)
 
+        if len(self.images.shape) == 1: # unaltered .images
+            return self.images
+
         return self._handle_normalized_state(
             lambda : self.images / 255,
             lambda : self.images + .5,
@@ -85,24 +88,16 @@ class ImageHandler():
 
     def transform(self, resize = False, normalize = False, grayscale = False, invert = False, rotate = False):
         context = self._get_context()
-        images = context.images
         if resize:
             context.resize(resize)
-            images = context.images
         if normalize:
             context.normalize()
-            images = context.images
         if grayscale:
             context.grayscale()
-            images = context.images
         if rotate:
             context.rotate()
-            images = context.images
         if invert:
             context.invert()
-            images = np.append(images, context.images, axis = 0)
-
-        context.images = images
         return context
 
     def _clone(self):
