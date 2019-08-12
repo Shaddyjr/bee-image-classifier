@@ -42,7 +42,7 @@ class ImageHandler():
         resizing = (W,H)
         '''
         context = self._get_context()
-        context.images = np.asarray([resize(image, resizing, anti_aliasing=True, mode = "constant", preserve_range = True) for image in context.images])
+        context.images = np.asanyarray([resize(image, resizing, anti_aliasing=True, mode = "constant", preserve_range = True) for image in context.images])
         return context
 
     def grayscale(self):
@@ -53,11 +53,19 @@ class ImageHandler():
     def rotate(self):
         context = self._get_context()
 
-        out = context.images.copy()
-        for image in context.images:
-            out = np.append(out, [rotate(image, angle) for angle in range(90,360,90)], axis = 0)
+
+        out = []
+        # original
+        out.extend(context.images)
         
-        out = np.append(out, [np.flipud(unflipped_img) for unflipped_img in out] , axis = 0)
+        #rotated
+        rotated = [rotate(image, angle) for angle in range(90,360,90) for image in context.images]
+        out.extend(rotated)
+        
+        #mirroring
+        mirrored = [np.flipud(image) for image in out]
+        out.extend(mirrored)
+
         context.images = np.asanyarray(out)
 
         ## alter context index
