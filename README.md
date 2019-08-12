@@ -5,8 +5,7 @@ Beekeepers must face a myriad of threats to their hives. The _Varroa (pronounced
 
 We plan to create such an early detection tool by using the dataset from the [Honey Bee Annotated Image Dataset](https://www.kaggle.com/jenny18/honey-bee-annotated-images) found on Kaggle. With these annotated images, we will train a Convolutional Neural Network to classify bee images as having _varroa mites_ or not (binary classification).
 
-A _varroa mite_ infestation can be fatal, therefore we consider falsely classifying a bee image as "healthy" could be disastrous. Therefore, recall, or sensativity, will be our metric for model selection.
-
+Accuracy will be our metric for model selection.
 ## Risks & assumptions:
 While creating this predictive model, we must make certain assumptions, which bear consideration.
 

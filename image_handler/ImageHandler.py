@@ -3,7 +3,6 @@ from skimage.transform import rescale, resize, rotate
 from skimage.color import rgb2gray
 
 class ImageHandler():
-
     def __init__(self, images):
         self.images = np.asanyarray([np.asarray(image) for image in images])
         self.index = np.array(range(len(self.images)))
@@ -52,8 +51,6 @@ class ImageHandler():
 
     def rotate(self):
         context = self._get_context()
-
-
         out = []
         # original
         out.extend(context.images)
@@ -63,8 +60,8 @@ class ImageHandler():
         out.extend(rotated)
         
         #mirroring
-        mirrored = [np.flipud(image) for image in out]
-        out.extend(mirrored)
+        # mirrored = [np.flipud(image) for image in out]
+        # out.extend(mirrored)
 
         context.images = np.asanyarray(out)
 
@@ -72,7 +69,8 @@ class ImageHandler():
         original      = context.index
         angles        = np.repeat(context.index, 3)
         all_angles    = np.append(original, angles)
-        context.index = np.append(all_angles, all_angles)
+        # context.index = np.append(all_angles, all_angles)
+        context.index = all_angles
         return context
 
     def invert(self):
@@ -109,7 +107,7 @@ class ImageHandler():
         return context
 
     def _clone(self):
-        clone = ImageHandler(self.images)
+        clone = ImageHandler(self.images.copy())
         clone._is_clone = True
         return clone
     
