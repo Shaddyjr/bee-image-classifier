@@ -1,17 +1,23 @@
 **Bee Image Classification using a CNN to determine presence of Varroa mites**
 
-## Problem Statement:
+#### Author: Mahdi Shadkam-Farrokhi: [GitHub](https://github.com/Shaddyjr) | [Medium](https://medium.com/@mahdis.pw) | [LinkedIn](https://www.linkedin.com/in/mahdi-shadkam-farrokhi-m-s-8a410958/) | [mahdis.pw](http://mahdis.pw)
+
+![](./images/bee.png)
+
+#### This project is featured in a Medium post: [link](https://medium.com/@mahdis.pw/bee-image-classification-using-a-cnn-and-keras-5fd5ed90a37b)
+
+
+## Problem Statement
 Beekeepers must face a myriad of threats to their hives. The _Varroa (pronounced "vr-ow-uh") destructor_, or more commonly the _varroa mite_, is a natural predator to honey bees and is one of the biggest pests plaguing the bee keeping community. The sooner a keeper can begin treating for _varroa_, the less likely a [colony collapse](https://ipm.missouri.edu/MPG/2013/7/Colony-Collapse-Disorder-the-Varroa-Mite-and-Resources-for-Beekeepers/) will occur.  Early detection could mean the difference between a healthy hive and a dead one. 
 
-We plan to create such an early detection tool by using the dataset from the [Honey Bee Annotated Image Dataset](https://www.kaggle.com/jenny18/honey-bee-annotated-images) found on Kaggle. With these annotated images, we will train a Convolutional Neural Network to classify bee images as having _varroa mites_ or not (binary classification).
+## Executive Summary
+With the dataset from the [Honey Bee Annotated Image Dataset](https://www.kaggle.com/jenny18/honey-bee-annotated-images) found on Kaggle, we will train a Convolutional Neural Network (CNN) to classify bee images as having _varroa mites_ or not (binary classification). As a general metric, we will use accuracy to select our best model.
 
-Accuracy will be our metric for model selection.
-## Risks & assumptions:
-While creating this predictive model, we must make certain assumptions, which bear consideration.
+Our best model showed a __99.64% accuracy__ on the testing dataset. Although this sounds compelling, there are a number of considerations that must be taken into account in order to better understand this score.
 
-The neural network will be trained using the provided annotated images. Regardless of how well the model classifies a bee image from the training data, classifying real world images is the true goal. Inherently, we assume the given dataset resembles bee images 'in the wild', which is a generous assumption to make.
+First, we must acknoledge the substantially low sample size of this dataset, having less than 4,500 images. Well established norms in image classification suggests having tens of thousands of observations in order to have confidence in the trained model. Surprisingly, the images of _varroa_ classified bees all came from the same location, and likely the same photographer. This inherently factors bias into our model. Given our findings, it is highly likely this played a significant role in how our model classified images - in particular, the unique background color in these images.
 
-Additionally, one of the largest assumptions we're making is to assume that bee class (worker, drone, queen), location, date and time, and bee species are all irrelevant factors in determining if a bee image can be properly categorized. There is a practical need for this assumption, however; the model's classification needs to be based solely on a user's image 'in the field' and therefore without these features. So, it only makes practical sense to train the model under these limited conditions.
+Other issues arose from the images themselves. Almost every image has a unique width and height, which forced us to rescale and standardize each image. This invariably lead to loss of data quality. Lastly, after looking at many of these images direclty, it was clear many did not properly depict a bee. For example, some images simply featured a shadow, while others featured only partial bees. Some images weren't even human readable.Taking these factors into perspective, it's difficult to discern if the model would perform well outside of this dataset.
 
-Source Documentation
+## Source Documentation
 - [Honey Bee Annotated Image Dataset (Kaggle)](https://www.kaggle.com/jenny18/honey-bee-annotated-images)
