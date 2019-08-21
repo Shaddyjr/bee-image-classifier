@@ -22,3 +22,6 @@ Other issues arose from the images themselves. Almost every image has a unique w
 
 ## Source Documentation
 - [Honey Bee Annotated Image Dataset (Kaggle)](https://www.kaggle.com/jenny18/honey-bee-annotated-images)
+- [Jeremy Jordan](https://www.jeremyjordan.me/batch-normalization/)
+- [Custom `ImageHandler` class demo](./code/image_handler/ImageHandler.py)
+- [`ImageHandler` Documentation](./code/ImageHandler_doc.ipynb)
