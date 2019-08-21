@@ -1,4 +1,4 @@
-**Bee Image Classification using a CNN to determine presence of Varroa mites**
+# Bee Image Classification using a CNN to determine presence of Varroa mites
 
 #### Author: Mahdi Shadkam-Farrokhi: [GitHub](https://github.com/Shaddyjr) | [Medium](https://medium.com/@mahdis.pw) | [LinkedIn](https://www.linkedin.com/in/mahdi-shadkam-farrokhi-m-s-8a410958/) | [mahdis.pw](http://mahdis.pw)
 
