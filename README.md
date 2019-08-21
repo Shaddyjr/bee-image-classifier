@@ -19,13 +19,12 @@ Our best model showed a __99.3% accuracy__ on the testing dataset. Although this
 First, we must acknowledge the substantially low sample size of this dataset, having less than 4,500 images. Well established norms in image classification suggests having tens of thousands of observations in order to have confidence in a trained model. Surprisingly, the images of _varroa_ bees all came from the same location, and likely the same photographer. This inherently factors bias into our model. 
 
 Other issues arose from the images themselves. Almost every image has a unique width and height, which forced us to rescale and standardize each image. This invariably lead to a loss of data quality. Lastly, after looking at many of these images direclty, it was clear many did not properly depict a complete bee. For example, some images simply featured a shadow, while others featured only parts of bees. Others were simply too vague to even be human readable. Taking these factors into perspective, it's difficult to discern if the model would perform well outside of this dataset.
-
 ## Conclusions and Recommendations
 
 ### Conclusion
 We were able to successfully train a CNN to perform better than the baseline model of 76.3%. In all, __our best performing model was the No Transformation Model at 99.3% accuracy__. This model featured the most reasonable errors with the highest overall accuracy and fewest missclassifications.
 
-There are caveats to using it, however. To optimize this model's effectiveness, images of the yellow/orange patterned honey bees work best. Additionally, the photographer should be mindful to avoid backgrounds with a similar hue to the bees being photographed.
+There are caveats to using it, however. To optimize this model's effectiveness, images of the yellow/orange patterned honey bees work best. Additionally, the photographer should be mindful to photograph the entire bee and avoid backgrounds with a similar hue to the bees being photographed.
 
 ### Assumptions
 This model was built using a number of assumptions, which we should remain mindful of. First and foremost, we used a dataset with a substantially small sample size. This CNN was trained using 3/4ths of the total 4,400 images - a paultry number considering most image classifiers are trained with tens or even hundreds of thousands of images in order to gain confidence in the model. Also, we had to rescale almost every image to 54x50, which inevitably reduced data quality.
