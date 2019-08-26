@@ -8,13 +8,12 @@
 
 #### The Jupyter Notebook for this project can be found within [code/project_notebook.ipynb](./code/project_notebook.ipynb)
 
-#### A practical application of our best CNN can be found [here](https://bee-classifier.herokuapp.com)
+#### A practical application of our best CNN can be found [here](https://bee-classifier.herokuapp.com) (it may take a moment to spin up)
 
 ## Problem Statement
-Beekeepers must face a myriad of threats to their hives. The _Varroa (pronounced "vr-ow-uh") destructor_, or more commonly the _varroa mite_, is a natural predator to honey bees and is one of the biggest pests plaguing the bee keeping community. The sooner a keeper can begin treating for _varroa_, the less likely a [colony collapse](https://ipm.missouri.edu/MPG/2013/7/Colony-Collapse-Disorder-the-Varroa-Mite-and-Resources-for-Beekeepers/) will occur. Early detection could mean the difference between a healthy hive and a dead one. 
+Honey bees contribute nearly \\$20 billion to the value of U.S. crop production [$^1$](https://www.abfnet.org/page/PollinatorFacts). Meanwhile, beekeepers continue to lose up to 45 percent of their hives annually [$^2$](http://cms.business-services.upenn.edu/morrisarboretum-blog/303-agriculture-and-bees-what-consumers-need-to-know.html). Among the myriad of threats to their hives, beekeepers must continually monitor for the _varroa_ pest. The _Varroa (pronounced "vr-ow-uh") destructor_, or more commonly the _varroa mite_, is a natural predator to honey bees and is one of the biggest pests plaguing the bee keeping community. The sooner a keeper can begin treating for _varroa_, the less likely a [colony collapse](https://ipm.missouri.edu/MPG/2013/7/Colony-Collapse-Disorder-the-Varroa-Mite-and-Resources-for-Beekeepers/) will occur. Early detection could mean the difference between a healthy hive and a dead one. 
 
-With the dataset from the [Honey Bee Annotated Image Dataset](https://www.kaggle.com/jenny18/honey-bee-annotated-images) found on Kaggle, we will train a Convolutional Neural Network (CNN) to classify bee images as having _varroa mites_ or not (binary classification). As a general metric, we will use accuracy to select our best model.
-
+With the dataset from the [Honey Bee Annotated Image Dataset](https://www.kaggle.com/jenny18/honey-bee-annotated-images) found on Kaggle, we will train a Convolutional Neural Network (CNN) to classify bee images as having _varroa mites_ or not (binary classification). Such a model could serve as a practical early detection system for beekeepers. We will use accuracy to select our best model.
 ## Executive Summary
 We used the dataset from the [Honey Bee Annotated Image Dataset](https://www.kaggle.com/jenny18/honey-bee-annotated-images) to train a CNN using various model compositions - including 1) unaltered image data, 2) rotating and mirroring the data, and 3) rotating + mirroring as well as altering image brightness. Transforming image data has been known to help make a more robust CNN.
 
@@ -24,7 +23,7 @@ Other issues arose from the images themselves. Almost every image had a unique w
 
 There were some interesting trends that came to light. One clearly important aspect of the images turned out to be the background color. Even in our best model, we found images with a background similar in color to the bee proved difficult for the model to properly classify. When looking at convolutional layers, we found the background pixels were a significant factor forming the network's classification output.
 
-Lastly, as a way of connecting our findings to a practical application, we created a [Bee Classifier mobel web appliction](https://bee-classifier.herokuapp.com) (hosted on Heroku.com, which may take a moment to spin up). Beekeepers can use this application from their desktops or mobile devices at their convenience. This "proof of concept" is the direct manifestation of our best CNN in action, and could be used to further validate and test the model using real world data.
+Lastly, as a way of connecting our findings to a practical application, we created a [Bee Classifier mobel web appliction](https://bee-classifier.herokuapp.com). Beekeepers can use this application from their desktops or mobile devices at their convenience. This "proof of concept" is the direct manifestation of our best CNN in action, and could be used to further validate and test the model using real world data.
 
 ## Conclusion
 We were able to successfully train a CNN to perform better than the baseline model of 76.3% accuracy. In all, __our best performing model was the Brightness Transformation Model at 98.9% training accuracy and 99.5% testing accuracy__. This model featured a high overall accuracy with a few reasonable missclassifications. The convolutional layers also show evidence the model is using _varroa_ detection to inform image classification, giving us confidence the model would perform well in the field. There is a caveat with using this model, however - for best results, images should have backgrounds that contrast well with the bee.
