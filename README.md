@@ -4,16 +4,19 @@
 
 <img src="./images/bee.png" width="200"/>
 
-#### This project is featured in a Medium post: ["Bee Image Classification using a CNN and Keras"](https://medium.com/@mahdis.pw/bee-image-classification-using-a-cnn-and-keras-5fd5ed90a37b)
+#### [Project Presentation](presentation.pdf)
 
-#### The Jupyter Notebook for this project can be found within [code/project_notebook.ipynb](./code/project_notebook.ipynb)
+#### [Medium Post](https://medium.com/@mahdis.pw/bee-image-classification-using-a-cnn-and-keras-5fd5ed90a37b)
 
-#### A practical application of our best CNN can be found [here](https://bee-classifier.herokuapp.com) (it may take a moment to spin up)
+#### [Jupyter Notebook](./code/project_notebook.ipynb)
+
+#### [Bee Classifier mobile web application](https://bee-classifier.herokuapp.com) (it may take a moment to spin up)
 
 ## Problem Statement
 Honey bees contribute nearly \\$20 billion to the value of U.S. crop production [$^1$](https://www.abfnet.org/page/PollinatorFacts). Meanwhile, beekeepers continue to lose up to 45 percent of their hives annually [$^2$](http://cms.business-services.upenn.edu/morrisarboretum-blog/303-agriculture-and-bees-what-consumers-need-to-know.html). Among the myriad of threats to their hives, beekeepers must continually monitor for the _varroa_ pest. The _Varroa (pronounced "vr-ow-uh") destructor_, or more commonly the _varroa mite_, is a natural predator to honey bees and is one of the biggest pests plaguing the bee keeping community. The sooner a keeper can begin treating for _varroa_, the less likely a [colony collapse](https://ipm.missouri.edu/MPG/2013/7/Colony-Collapse-Disorder-the-Varroa-Mite-and-Resources-for-Beekeepers/) will occur. Early detection could mean the difference between a healthy hive and a dead one. 
 
 With the dataset from the [Honey Bee Annotated Image Dataset](https://www.kaggle.com/jenny18/honey-bee-annotated-images) found on Kaggle, we will train a Convolutional Neural Network (CNN) to classify bee images as having _varroa mites_ or not (binary classification). Such a model could serve as a practical early detection system for beekeepers. We will use accuracy to select our best model.
+
 ## Executive Summary
 We used the dataset from the [Honey Bee Annotated Image Dataset](https://www.kaggle.com/jenny18/honey-bee-annotated-images) to train a CNN using various model compositions - including 1) unaltered image data, 2) rotating and mirroring the data, and 3) rotating + mirroring as well as altering image brightness. Transforming image data has been known to help make a more robust CNN.
 
