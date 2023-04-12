@@ -10,7 +10,7 @@
 
 #### [Jupyter Notebook](./code/project_notebook.ipynb)
 
-#### [Bee Classifier mobile web application](https://bee-classifier.herokuapp.com) (it may take a moment to spin up)
+#### [Bee Classifier mobile web application](https://bee-image-classifier.herokuapp.com/) (it may take a moment to spin up)
 
 ## Problem Statement
 
@@ -28,7 +28,7 @@ Other issues arose from the images themselves. Almost every image had a unique w
 
 There were some interesting trends that came to light. One clearly important aspect of the images turned out to be the background color. Even in our best model, we found images with a background similar in color to the bee proved difficult for the model to properly classify. When looking at convolutional layers, we found the background pixels were a significant factor forming the network's classification output.
 
-Lastly, as a way of connecting our findings to a practical application, we created a [Bee Classifier mobel web appliction](https://bee-classifier.herokuapp.com). Beekeepers can use this application from their desktops or mobile devices at their convenience. This "proof of concept" is the direct manifestation of our best CNN in action, and could be used to further validate and test the model using real world data.
+Lastly, as a way of connecting our findings to a practical application, we created a [Bee Classifier mobel web appliction](https://bee-image-classifier.herokuapp.com/). Beekeepers can use this application from their desktops or mobile devices at their convenience. This "proof of concept" is the direct manifestation of our best CNN in action, and could be used to further validate and test the model using real world data.
 
 ## Conclusion
 
@@ -42,7 +42,7 @@ Lastly, the images were inconsistent for a number of reasons. We had to rescale 
 
 We would recommend revisiting this problem with a more robust 20k+ observation dataset of annotated bee images with each image having the same height and width.
 
-Additionally, we created [a Bee Classifier mobile web application](https://bee-classifier.herokuapp.com) using the Brightness Transformation model, which users can use to classify images of a single bee. Such an application could be used to validate and test this model in a production-like setting.
+Additionally, we created [a Bee Classifier mobile web application](https://bee-image-classifier.herokuapp.com/) using the Brightness Transformation model, which users can use to classify images of a single bee. Such an application could be used to validate and test this model in a production-like setting.
 
 Lastly, it's important to think practically about the problem at hand. It's impractical to expect beekeepers to painstakingly photograph individual bees and feed those images into our model. It's much more intuitive to take a single photo of a group of bees and use that instead. Therefore, a more realistic solution to the problem would be 2-fold:
 
@@ -51,7 +51,7 @@ Lastly, it's important to think practically about the problem at hand. It's impr
 
 ## Source Documentation
 
-- [Bee Classifier Application (proof of concept)](https://bee-classifier.herokuapp.com)
+- [Bee Classifier Application (proof of concept)](https://bee-image-classifier.herokuapp.com/)
 - [Honey Bee Annotated Image Dataset (Kaggle)](https://www.kaggle.com/jenny18/honey-bee-annotated-images)
 - [Jeremy Jordan on 'Normalizing your data'](https://www.jeremyjordan.me/batch-normalization/)
 - [Gabriel Pierobon's post on 'Visualizing intermediate activation in Convolutional Neural Networks with Keras'](https://towardsdatascience.com/visualizing-intermediate-activation-in-convolutional-neural-networks-with-keras-260b36d60d0)
